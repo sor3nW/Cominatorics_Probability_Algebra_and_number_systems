@@ -1,0 +1,241 @@
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,scrextend, quoting}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{enumitem}
+
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+
+\newenvironment{problem}[1]{%
+  \begin{addmargin}[1em]{0em}
+  \quoting
+  \noindent
+  \textbf{#1} % Display the problem number
+  \normalfont % Ensure the text is in normal font
+}{%
+  \endquoting
+  \end{addmargin}
+  \qed
+}
+
+
+\newenvironment{sentence}{%
+  \noindent
+  \begin{quoting}[leftmargin=0em,rightmargin=2em]%
+  \normalfont
+}{%
+  \end{quoting}%
+}
+
+ 
+\begin{document}
+
+\lhead{MAT-1313-002}
+\chead{Soren Watterson}
+\rhead{March 22nd, 2024}
+
+\noindent\textbf{Problem 3.7} list all of the subsets of $A = \{1, 2, 3\}$\\
+\begin{addmargin}[1em]{1em}
+    $\{ \}, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\}$
+
+\end{addmargin}
+\begin{flushright}
+    \qed
+\end{flushright}
+
+\noindent\textbf{Theorem 3.8} Let $A$ be a set. Then\\
+\begin{addmargin}[1em]{1em}
+    (a) $A \subseteq A$\\\\
+    Assume that set $A = \{ 1, 2, 3\}$\\
+    according to definition 3.6 $A$ is a subset of $A$ because every element within set $A$ is in itself, which therefore makes it a subset. 
+    \begin{flushright}
+    \qed
+    \end{flushright}
+    (b) $\emptyset \subseteq A$.\\\\
+    Assume that set $A = \{ 1, 2, 3\}$\\
+    Every set also contains the contains the empty set.\\
+    Therefore $A$ can be rewritten as $A = \{ \{\}, 1, 2, 3\}$\\
+    This means that according to definition 3.6 the empty set is a subset of set $A$.
+    \begin{flushright}
+    \qed
+    \end{flushright}
+\end{addmargin}
+\noindent\textbf{Problem 3.9} Suppose $A$ and $B$ are sets. Describe a skeleton proof for proving that $A \subseteq B$.\\
+\begin{addmargin}[1em]{1em}
+    Assume that we have two sets $A$ and $B$.\\
+    For $A$ to be a subset of $B$ every element in $A$ must be in $B$\\
+    Let $x$ be an arbitrary element in $A$\\
+    Since $A$ is a subset of $B$, every element in $A$ must also be in $B$\\
+    Therefore, $x$ must be an element in $B$\\
+    Because $x$ was chosen arbitrarily we have shown that every element in $A$ is also in $B$, and therefore, $A \subseteq B$
+    \begin{flushright}
+    \qed
+    \end{flushright}
+\end{addmargin}
+
+\noindent\textbf{Problem 3.10} (Transitivity of Subsets). Suppose that $A$, $B$, and $C$ are sets. If $A \subseteq B$ and
+$B \subseteq C$, then $A \subseteq C$.\\
+\begin{addmargin}[1em]{1em}
+    To prove that $A \subseteq C$ we must show that every element in $A$ is also in $C$\\
+    Let $x$ be an arbitrary element in $A$\\
+    Because $A \subseteq B$, $x$ is in $B$\\
+    Furthermore, because $B \subseteq C$, $x$ is in $C$\\
+    Therefore, $x$ is an element of both $A$ and $C$ which implies that $A \subseteq C$.
+    \begin{flushright}
+    \qed
+    \end{flushright}
+\end{addmargin}
+
+\noindent\textbf{Problem 3.18 } Suppose that the universe of discourse is $U = \{x,y,z,\{y\},\{x,z\}\}$. Let $S =
+\{x,y,z\}$ and $T = \{x,\{y\}\}$. Find each of the following.\\
+\begin{addmargin}[1em]{1em}
+    (a) $S \cap T$\\
+    $$ S \cap T = \{x,y,z\} \cap \{x, \{y\}\} = \{x\}$$
+    (b) $(S \cup T)^c$\\
+        $$ (S \cup T)^c =  (\{x,y,z\} \cup \{x, \{y\}\})^c = \{\{x,z\}\}$$\\
+    (c) $T$ $\backslash$ $S$\\
+    \begin{center}
+        $T$ $\backslash$ $S$ $= \{\{y\}\}$
+    \end{center}
+    \begin{flushright}
+    \qed
+    \end{flushright}
+\end{addmargin}
+
+\noindent\textbf{Theorem 3.19} If $A$ and $B$ are sets such that $A \subseteq B$, then $B^c \subseteq A^c$.
+\begin{addmargin}[1em]{1em}
+    To prove this theorem we need to show that every element in $B^c$ is in $ A^c$\\
+    Let $x$ be an arbitrary element in $B^c$. Because $x \in B^c$, $x \notin B$\\
+    This means that $x$ is also not an element of $A$\\
+    Therefore, $x$ is an element of $A^c$\\
+    This shows that $x$ is an element of $B^c$ and $A^c$, which proves that $B^c \subseteq A^c$.
+    \begin{flushright}
+    \qed
+    \end{flushright}
+\end{addmargin}
+
+\noindent\textbf{Theorem 3.20} If $A$ and $B$ are sets, then $A \, \backslash \, B$ $= A \cap B^c$
+\begin{addmargin}[1em]{1em}
+    Let $x \in A \, \backslash \, B$,\\
+    This implies $x \in A \text{ and } x \notin B $\\
+    which also implies $x \in B \text{ and } x \in B^c$\\
+    Therefore showing that $x \in A \cap B^c$ (i)\\\\
+    Now let $y \in A \cap B^c$\\
+    this implies $ y\in A \text{ and } y \in B^c$\\
+    this then implies $y \in A \text{ and } y \notin B$\\
+    therefore $ y\in A \,\backslash\, B$ (ii)\\\\
+    from (i) and (ii) we have now proven that $A \,\backslash\, B = A \cap B^c$\\
+
+    
+    
+    \begin{flushright}
+    \qed
+    \vspace{16mm}
+    \end{flushright}
+    
+\end{addmargin}
+
+\noindent\textbf{Theorem 3.21} (De Morgan’s Law). If $A$ and $B$ are sets, then\\
+\begin{addmargin}[1em]{1em}
+    \textbf{(a)} $(A \cup B)^c = A^c \cap B^c$\\
+    Let $x \in (A \cup B)^c$\\
+    This means $x \notin (A \cup B)$\\
+    which implies $x \notin A \text{ and } x \notin B$\\
+    Therefore, $x \in A^c \text{ and } x \in B^c$\\
+    Hence, $x \in A^c \cup B^c$ (i)\\
+
+    \noindent Now let $y \in A^c \cap B^c$\\
+    this means $y \in A^c \text{ or } y \in B^c$\\
+    which implies $y \notin A \text{ or } y \notin B$\\
+    Therefore, $y \notin (A \cup B)$\\
+    Hence, $y \in (A \cup B)^c$  (ii)\\\\ 
+    From (i) and (ii) we have proven that $(A \cup B)^c = A^c \cap B^c$\\
+    
+    \noindent\textbf{(b)} $(A \cap B)^c = A^c \cup B^c$\\
+    we can use a similar proof for this theorem.\\
+    Let $x \in (A \cap B)^c$\\
+    this means $x \notin (A \cap B)$\\
+    which implies $x \notin A \text{ or } x \notin B$\\
+    therefore, $x \in A^c \text{ or } x \in B^c$\\
+    Hence, $x \in A^c \cap B^c$ (i)\\
+
+    \noindent Now, let $y \in (A^c \cup B^c)$\\
+    this means $ y \in A^c \text{ and } y \in B^c$\\
+    which implies $ y \notin A \text{ and } y \notin B$\\
+    therefore, $y \notin (A \cap B)$\\
+    hence $y \in (A \cap B)^c$ (ii)\\\\
+    from (i) and (ii) we have proven that $(A \cap B)^c = A^c \cup B^c$\\
+    
+    \begin{flushright}
+    \qed
+    \end{flushright}
+\end{addmargin}
+\noindent\textbf{Theorem 3.22} (Distribution of Union and Intersection). If $A$, $B$, and $C$ are sets, then\\
+\begin{addmargin}[1em]{1em}
+    \textbf{(a)} $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$\\
+    Let $x$ be any element of $A \cup (B \cap C)$\\
+    Then, $x \in A \cup (B \cap C)$\\
+    this shows that $x \in A \text{ or } x \in (B \cap C)$\\
+    which implies that $x \in A \text{ or } (x \in B \text{ and } x \in C)$\\
+    which then implies that $(x \in A \text{ or } x \in B) \text{ and } (x \in A \text{ or } x \in C)$\\
+    therefore, $x \in A \cup B \text{ and } x \in A \cup C$\\
+    hence, $x \in (A \cup B) \cap (A \cup C)$  (i)\\
+
+    \noindent Now let $y$ be any element of $(A \cup B) \cap ( A \cup C)$\\
+    Then $y \in (A \cup B) \cap( A \cup C)$\\
+    this shows that $y \in (A \cup B) \text{ and } y \in (A \cup C)$\\
+    which implies $(y \in A \text{ or } y \in B) \text{ and } (y \in \text{ or } y \in C)$\\
+    which also implies $y \in A \text{ or } (y \in B \text{ and } y \in C)$\\
+    therefore $y \in A \text{ or } y \in (B \cap C)$\\
+    hence, $y \in A \cup (B \cap C)$ (ii)\\\\
+    From (i) and (ii) we have now proven $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$\\\\
+    
+    \noindent\textbf{(b)} $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$\\
+    Let $x$ be any element of $A \cap (B \cup C)$\\
+    Then $x \in A \cap (B \cup C)$\\
+    this shows that $x \in A \text{ and } x \in (B \cup C)$\\
+    which implies $x \in A \text{ and } (x \in B \text{ or } y \in C)$\\
+    which also implies $(x \in A \text{ and } y \in B) \text{ or } (x \in A \text{ and } x \in C)$\\
+    therefore $x \in (A \cap B) \text{ or } x \in ( A \cap C)$\\
+    hence $x \in (A \cap B) \cup (A \cup C)$ (i)\\
+
+    \noindent Now let $y$ be any element of $(A \cap B) \cup (A \cap C)$\\
+    Then, $y \in (A\cap B) \cup (A \cap C)$\\
+    this shows that $(y \in A \text{ and } y\in B) \text{ or } (y \in A \text{ and } y\in C)$\\
+    which implies that $y\in A \text{ and } (y \in B \text{ or } y \in C)$\\
+    which also implies that $y \in A \text{ and } y \in (B \cup C)$\\
+    therefore, $y \in A \cap (B \cup C)$ (ii) \\\\
+    From (i) and (ii) we have now proven $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$\\
+    
+    \begin{flushright}
+    \qed
+    \end{flushright}
+\end{addmargin}
+
+\noindent\textbf{Problem 3.23} For each of the statements (a)-(d) on the left, find an equivalent symbolic proposition chosen from the list (i)-(v) on the right. Note that not every statement on the right will get used.
+\begin{addmargin}[1em]{1em}
+    (a) $A \subsetneq B$ = V\\
+    (b) $A \cap B = \emptyset$ = (ii)\\
+    (c) $(A \cup B)^c = \emptyset$ = (iii)\\
+    (d) $(A \cap B)^c = \emptyset$ = (iV)\\
+    
+    \begin{flushright}
+    \qed
+    \end{flushright}
+\end{addmargin}
+\end{document}
