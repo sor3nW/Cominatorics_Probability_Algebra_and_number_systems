@@ -1,0 +1,205 @@
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,scrextend, quoting}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{enumitem}
+\usepackage{graphicx}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+
+\newenvironment{problem}[1]{%
+  \begin{addmargin}[1em]{0em}
+  \quoting
+  \noindent
+  \textbf{#1} % Display the problem number
+  \normalfont % Ensure the text is in normal font
+}{%
+  \endquoting
+  \end{addmargin}
+  \qed
+}
+
+
+\newenvironment{sentence}{%
+  \noindent
+  \begin{quoting}[leftmargin=0em,rightmargin=2em]%
+  \normalfont
+}{%
+  \end{quoting}%
+}
+
+ 
+\begin{document}
+
+\lhead{MAT-1313-002}
+\chead{Soren Watterson}
+\rhead{April 1st, 2024}
+
+\noindent\textbf{Problem 3.60} Let $A = [2,5] \text{, } B = [3,7] \text{, }C = [1,3] \text{, }D = [2,4]$. Compute each of the following.\\
+\begin{addmargin}[1em]{1em}
+
+    \noindent$(a) \text{ }(A \cap B) * (C \cap D)$\\
+
+    \noindent$(A \cap B) = \{ \text{ }\}$\\
+    $(C \cap B) = \{ \text{ }\}$\\
+    $(A \cap B) * (C \cap D) = \{\text{ } \}$\\
+    
+    \noindent$(b) \text{ }(A * C) \cap (B * D)$\\
+
+    \noindent$(A * C) = \{[2,2],[2,4],[5,2],[5,4]\}$\\
+    $(B * D) = \{[3,2],[3,4],[7,2],[7,4] \}$\\
+    $(A * C) \cap (B * D) = \{\text{ }\}$\\
+    
+    \noindent$(e) \text{ }A * (B \cap C)$\\\\
+    $A = [2,5]$\\
+    $(B \cap C) = \{3\}$\\
+    $A * (B \cap C) = \{ [2,3], [5,3]\}$\\
+
+    \noindent$(f) \text{ }(A * B) \cap (A * C)$\\\\
+    $(A * B) = \{[2,3],[2,7],[5,3],[5,7]\}$\\
+    $(A * C) = \{[2,1],[2,3],[5,1],[5,3] \}$\\
+    $(A * B) \cap (A * C) = \{[2,3],[5,3]\}$\\
+    \begin{flushright}
+    \qed
+    \end{flushright}
+\end{addmargin}
+
+\noindent\textbf{Problem 3.61} Let $A, B, C$ and $D$ be sets. Determine whether each of the following statements is true or false. If a statement is true, prove it. Otherwise, provide a counterexample.\\
+\begin{addmargin}[1em]{1em}
+    $(a) \ (A \cap B) * (C \cap D) = (A * C) \cap (B * D)$: True\\
+    Let $(x, y)$ be an element in $(A \cap B) * (C \cap D)$. This means that $x$ is in $A$ and $B$, and that $y$ is in $C$ and $D$.\\
+    Therefore, $(x, y)$ is also in $A*C$ and $B*D$. Hence, $(x, y)$ is in the intersection of $A*C$ and $B*D$, which is $(A*C)\cap (B*D)$.\\
+    Now we have to prove that $ (A * C) \cap (B * D) = (A \cap B) * (C \cap D)$.\\\\
+    Let $(x, y)$ be an element in $(A*C) \cap (B*D)$. Then, $x$ is in $A$ and $y$ is in $C$, and $x$ is also in $B$ and $y$ is in $D$.\\
+    Therefore, $x$ is in $A$ and $B$, and $y$ is in $C$ and $D$. This means that $(x, y)$ is in the product of $(A\cap B)$ and $C\cap D$, which is $(A\cap B)*(C \cap D)$, meaning our statement is true. \\
+
+    \noindent$(c) \ A * (B \cap C) = (A * B) \cap (A * C)$: True\\\\
+    Proof : we need to show that each element in$ A*(B\cap C)$ is also in $(A*B)\cap(A*C)$, and vice versa.\\
+    
+    \noindent Let $(x, y)$ be an element in $A*(B\cap C)$. Then, $x$ is in $A$, and $y$ is in both $B$ and $C$. Therefore, $(x, y$) is in $A*B$ and $A*C$. Hence, $(x, y)$ is in the intersection of A×B and A×C, which is $(A*B)\cap(A*C)$.\\
+    
+    \noindent Conversely, let $(x, y)$ be an element in $(A*B)\cap(A*C)$. Then, $x$ is in $A$, and $y$ is in both $B$ and $C$. Therefore, $y$ is in the intersection of $B$ and $C$, which is $B\cap C$.\\
+    
+    \noindent Hence, $(x, y)$ is in the product of $A$ and $(B\cap C)$, which is $A*(B\cap C)$.\\
+    
+
+    \noindent$(e) \ A * (A * B) = (A*B)\,\backslash\,(A*C)$: False\\
+    Counterexample: $A=\{1\}, B=\{2\}, and C=\{3\}$\\
+    \begin{flushright}
+    \qed
+    \end{flushright}
+    
+\end{addmargin}
+
+\noindent\textbf{Problem 3.62} If $A$ and $B$ are sets, conjecture a way to rewrite $(A * B)^C$ in a way that involves $A^C$ and $B^C$ and then prove your conjecture.\\
+\begin{addmargin}[1em]{1em}
+    
+    \begin{flushright}
+    \qed
+    \end{flushright}
+\end{addmargin}
+
+\noindent\textbf{Problem 4.4} For all $n \in N, \sum_{i=1}^{n}i = \frac{n(n+1)}{2}$\\
+\begin{addmargin}[1em]{1em}
+    Base Case $(n=1)$:\\
+    $\sum_{i=1}^{1}i$ = $\frac{1(1+1)}{2}$\\
+    $1=1$\\
+    Now we have proven that the base case, $(n=1)$, is true\\
+    inductive step:\\
+    next we assume that the statement is true for $n=k$\\
+    $\sum_{i=1}^k = \frac{k(k+1)}{2}$\\
+    we must then prove that the statement is true for $n=k+1$, or $\frac{k+1(k+2)}{2}$\\
+    \begin{align*}
+        \sum_{i=1}^{k+1}i &=& \sum_{i=1}^{k}i+k+1\\
+        &=& \sum_{i=1}^{k}i+k+1\\
+        &=& \frac{k(k+1)}{2} + (k+1)\\
+        &=& \frac{k(k+1)}{2} + \frac{2(k+1)}{2}\\
+        &=& \frac{(k+1)(k+2)}{2}
+    \end{align*}
+    Now that we have proven that the statement is true for $k + 1$ the statement is proven using induction.
+    \begin{flushright}
+    \qed
+    \end{flushright}
+\end{addmargin}
+\noindent\textbf{Problem 4.5} For all $n \in N\text{, } 3 \text{ divides } 4^n-1$.\\
+\begin{addmargin}[1em]{1em}
+    This problem can be stated as $3|4^n-1 = (4^n-1 =3i)$ for some $i \in \Z$\\
+    Base case $(n=1)$:\\
+    $4^1-1=3i$\\
+    $3=3i$\\
+    $i=1$\\
+    there exists an i such that 3 times i is equal to $4^1-1$ and therefore we have proven our base case.\\
+
+    inductive step:
+    Now assuming that the statement is true for all $n=k$ we must prove it is true for all $n=k+1$\\
+    \begin{align*}
+        &4^k-1& &=& &3i&\\
+        &4^k& &=& &3i+1&\\
+        &4^k *4& &=& &(3i+1)4&\\
+        &4^{k+1}& &=& &12i+4&\\
+        &4^{k+1}-1 &&=& &12i+3&\\
+        &4^{k+1} -1&&=& &3(4i + 1)&\\
+        &4^{k+1} -1&&=& &3j\text{ for some }j \in Z&\\
+    \end{align*}
+    now we have proven that the statement is true for $n=k+1$ and therefore the statement is proven using induction.
+    \begin{flushright}
+    \qed
+    \end{flushright}
+\end{addmargin}
+\noindent\textbf{Problem 4.6} For all $n \in N\text{, } 6 \text{ divides } n^3-n$.\\
+\begin{addmargin}[1em]{1em}
+    the statement can be expressed as $n^3-n=6i$ for some $i \in \Z$
+    Base case $(n=0)$:
+    $0^3-0=6i$\\
+    $i=0$\\
+    now we have proven that our statement is true for our base case\\
+    inductive step:
+    now assuming that the statement is true for all $n=k$ we must prove that it is true for $n=k+1$\\
+    \begin{align*}
+        &k^3-k=6i&\\
+        &k^3-k + 3k^2 + 3k =6i + 3k^2 + 3k&\\
+        &k^3 + 3k^2 + 3k -k=6i + 3k^2 + 3k&\\
+        &k^3 + 3k^2 + 3k -k + 1 - (k + 1)=6i + 3k^2 + 2k\\
+        &(k+1)^3 -(k+1) = 6i + 3k^2 + 2k&\\
+    \end{align*}
+    now we have proven that the statement is true for $n=k+1$ and our statement is proven using induction.
+    \begin{flushright}
+    \qed
+    \end{flushright}
+\end{addmargin}
+\noindent\textbf{Problem 4.7} Let $p_1,p_2,...,p_n$ be $n$ distinct points arranged on a circle. Then the number of line segments joining all pairs of points is $\frac{n^2-n}{2}$.\\
+\begin{addmargin}[1em]{1em}
+
+    \begin{flushright}
+    \qed
+    \end{flushright}
+\end{addmargin}
+\newpage
+
+\noindent\textbf{Problem 4.8} Consider a grid of square that is $2^n$ squares wide by $2^n$ squares long, where $n \in N$. One of the squares has been cut out, but you do not know which one! You have a bunch of L-shapes made up of $3$ squares. Prove that you can perfectly cover this chess-board with the L-shapes (with no overlap) for any $n \in N$. Figure $4.1$ depicts one possible covering of the case involving $n = 2$ and a fixed cut-out square.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Screenshot 2024-04-01 at 5.43.36 PM.png}
+    \label{fig:enter-label}
+\end{figure}
+\begin{addmargin}[1em]{1em}
+    
+    \begin{flushright}
+    \qed
+    \end{flushright}
+\end{addmargin}
+\end{document}
